@@ -1,0 +1,228 @@
+.admin-sidebar {
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a1f36 0%, #0f1419 100%);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo Section */
+.admin-sidebar-logo {
+  padding: 32px 24px 24px;
+  text-align: center;
+}
+
+.admin-logo-container {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.admin-logo-container:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.admin-logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.admin-logo-title {
+  font-family: 'Alpino', sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.admin-sidebar-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin-top: 24px;
+}
+
+/* Navigation */
+.admin-sidebar-nav {
+  flex: 1;
+  padding: 16px 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* Menu Items */
+.admin-sidebar-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 8px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.admin-sidebar-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.admin-sidebar-item:hover::before {
+  opacity: 1;
+}
+
+.admin-sidebar-item:hover {
+  transform: translateX(4px);
+}
+
+.admin-sidebar-item.active {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.15));
+}
+
+.admin-sidebar-item.active::before {
+  opacity: 1;
+}
+
+.admin-sidebar-item-content {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon Styling */
+.admin-sidebar-icon {
+  font-size: 22px;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.admin-sidebar-item:hover .admin-sidebar-icon {
+  color: #c4b5fd;
+  transform: scale(1.1);
+}
+
+.admin-sidebar-item.active .admin-sidebar-icon {
+  color: #a78bfa;
+}
+
+/* Label Styling */
+.admin-sidebar-label {
+  margin-left: 16px;
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.admin-sidebar-item:hover .admin-sidebar-label {
+  color: #f1f5f9;
+}
+
+.admin-sidebar-item.active .admin-sidebar-label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Active Indicator */
+.admin-sidebar-indicator {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(180deg, #8b5cf6, #6366f1);
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Footer */
+.admin-sidebar-footer {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.admin-version-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  color: #a78bfa;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.admin-version-badge:hover {
+  background: rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 240px;
+  }
+
+  .admin-sidebar-icon {
+    font-size: 20px;
+  }
+
+  .admin-sidebar-label {
+    font-size: 14px;
+  }
+}

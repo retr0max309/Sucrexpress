@@ -1,0 +1,994 @@
+// Importar fuentes de Google Fonts
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&f[]=cabinet-grotesk@100,400&f[]=alpino@400,500,600,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=panchang@400&display=swap');
+
+// ==============================
+// PALETA DE COLORES MEJORADA 🎨
+// ==============================
+:root {
+  // Colores Principales (Base existente mejorada)
+  --primary-color: #253746;          // Tu color base - Azul marino profundo
+  --primary-light: #3a4d5e;         // Versión más clara del primario
+  --primary-dark: #1a2832;          // Versión más oscura del primario
+  
+  // Colores Secundarios (Nuevos tonos oscuros suaves)
+  --secondary-color: #2c3e50;       // Azul grisáceo elegante
+  --secondary-light: #34495e;       // Versión clara del secundario
+  --secondary-dark: #1c2833;        // Versión oscura del secundario
+  
+  // Colores de Acento (Para destacar elementos importantes)
+  --accent-color: #3498db;          // Azul brillante moderno
+  --accent-hover: #2980b9;          // Azul acento hover
+  --accent-soft: #5dade2;           // Azul suave para fondos
+  
+  // Colores Neutros Oscuros (Grises sofisticados)
+  --dark-bg: #1e1e1e;              // Negro suave para fondos
+  --dark-surface: #2a2a2a;         // Superficie oscura
+  --dark-elevated: #363636;        // Superficie elevada
+  --dark-border: #404040;          // Bordes en modo oscuro
+  
+  // Colores Neutros Claros
+  --light-bg: #f8f9fa;             // Fondo claro existente
+  --light-surface: #ffffff;        // Superficie blanca
+  --light-gray: #f5f5f5;          // Gris claro existente
+  --medium-gray: #e9ecef;          // Gris medio
+  --border-gray: #dee2e6;          // Gris para bordes
+  
+  // Colores de Estado (Mejorados)
+  --success-color: #27ae60;        // Verde éxito más elegante
+  --success-light: #2ecc71;        // Verde claro
+  --warning-color: #f39c12;        // Naranja advertencia elegante
+  --warning-light: #e67e22;        // Naranja claro
+  --error-color: #e74c3c;          // Rojo error elegante
+  --error-light: #c0392b;          // Rojo oscuro
+  --info-color: #3498db;           // Azul información
+  
+  // Colores de Texto (Jerarquía mejorada)
+  --text-primary: #2c3e50;         // Texto principal oscuro
+  --text-secondary: #7f8c8d;       // Texto secundario
+  --text-muted: #95a5a6;           // Texto apagado
+  --text-light: #bdc3c7;           // Texto claro
+  --text-white: #ffffff;           // Texto blanco
+  --text-dark: #1a1a1a;            // Texto muy oscuro
+  
+  // Gradientes Modernos
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+  --gradient-success: linear-gradient(135deg, var(--success-color) 0%, var(--success-light) 100%);
+  
+  // Sombras Mejoradas
+  --shadow-sm: 0 2px 8px rgba(37, 55, 70, 0.08);
+  --shadow-md: 0 4px 16px rgba(37, 55, 70, 0.12);
+  --shadow-lg: 0 8px 32px rgba(37, 55, 70, 0.16);
+  --shadow-xl: 0 16px 48px rgba(37, 55, 70, 0.20);
+  
+  // Radios y Espaciado
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+}
+
+// ==============================
+// Estilos Globales Mejorados
+// ==============================
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  background-color: var(--light-surface);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Panchang', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none !important;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+span {
+  font-family: 'Satoshi', sans-serif;
+}
+
+// ==============================
+// Clases Utilitarias de Color
+// ==============================
+.text-primary { color: var(--primary-color) !important; }
+.text-primary-light { color: var(--primary-light) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-accent { color: var(--accent-color) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-dark { color: var(--text-dark) !important; }
+.text-white { color: var(--text-white) !important; }
+
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-primary-light { background-color: var(--primary-light) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-dark-surface { background-color: var(--dark-surface) !important; }
+.bg-gradient-primary { background: var(--gradient-primary) !important; }
+.bg-gradient-accent { background: var(--gradient-accent) !important; }
+
+// ==============================
+// Utilidades de fuentes
+// ==============================
+.font-satoshi { font-family: 'Satoshi', sans-serif !important; }
+.font-alpino { font-family: 'Alpino', sans-serif !important; }
+.font-panchang { font-family: 'Panchang', sans-serif !important; }
+.font-cabinet { font-family: 'Cabinet Grotesk', sans-serif !important; }
+
+.text-medium { font-size: 1.5rem !important; }
+
+// ==============================
+// Header Superior Mejorado
+// ==============================
+.bg-gray {
+  background: linear-gradient(135deg, var(--light-bg) 0%, var(--medium-gray) 100%);
+}
+
+#brandBtn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    span { display: none !important; }
+    background: var(--light-surface);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    
+    &::after {
+      content: 'S & E' !important;
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 700;
+    }
+  }
+}
+
+#logo-sucrexpress {
+  height: 80px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// ==============================
+// Navegación Mejorada
+// ==============================
+.navbar {
+  background: var(--light-surface) !important;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.nav-item {
+  font-family: 'Alpino', sans-serif;
+  font-weight: 700;
+}
+
+.min-w-50px {
+  min-width: 30px;
+}
+
+.menu-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background-color: var(--accent-soft);
+    transform: translateY(-2px);
+    
+    &::after {
+      background: var(--gradient-accent);
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      border-radius: var(--radius-sm);
+    }
+  }
+}
+
+// ==============================
+// Barra Promocional Mejorada
+// ==============================
+.text-small-x2 {
+  font-size: 0.8rem;
+}
+
+.promo-bar {
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.text-underline {
+  text-decoration: underline !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    text-decoration: none !important;
+    background-color: rgba(255,255,255,0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// ==============================
+// Botones Mejorados
+// ==============================
+.btn {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  background: var(--light-surface);
+  color: var(--primary-color);
+  
+  &:hover {
+    background: var(--gradient-primary);
+    color: var(--text-white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: var(--text-white);
+  
+  &:hover {
+    background: var(--gradient-accent);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.btn-accent {
+  background: var(--gradient-accent);
+  border: none;
+  color: var(--text-white);
+  
+  &:hover {
+    background: var(--gradient-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.btn-dark {
+  background: var(--gradient-dark);
+  border: none;
+  color: var(--text-white);
+  
+  &:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// ==============================
+// Hero Section Mejorado
+// ==============================
+.hero-video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.hero-video video {
+  min-height: 500px;
+  object-fit: cover;
+}
+
+#viewport-header {
+  background: linear-gradient(135deg, 
+    rgba(37, 55, 70, 0.8) 0%, 
+    rgba(44, 62, 80, 0.6) 100%
+  );
+  backdrop-filter: blur(5px);
+}
+
+.btn-white-transparent {
+  border: 2px solid var(--text-white);
+  background: transparent;
+  color: var(--text-white);
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    background: var(--text-white);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.btn-white-solid {
+  border: 2px solid var(--text-white);
+  background: var(--text-white);
+  color: var(--primary-color);
+  
+  &:hover {
+    background: transparent;
+    color: var(--text-white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.btnVideo {
+  background: rgba(255, 255, 255, 0.9);
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background: var(--text-white);
+    transform: scale(1.15);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// ==============================
+// Servicios Mejorados
+// ==============================
+.service-card {
+  background: var(--light-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-gray);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--accent-color);
+    
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-white);
+  font-size: 2.2rem;
+  transition: all 0.3s ease;
+  
+  .service-card:hover & {
+    background: var(--gradient-accent);
+    transform: rotate(5deg) scale(1.1);
+  }
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  font-family: 'Satoshi', sans-serif;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+  }
+  
+  svg {
+    font-size: 1.2rem;
+    color: var(--success-color);
+  }
+}
+
+// ==============================
+// Testimonios Mejorados
+// ==============================
+.testimonial-card {
+  background: var(--light-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  border: 1px solid var(--border-gray);
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--accent-color);
+  }
+  
+  &::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 4rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+    font-family: 'Panchang', sans-serif;
+  }
+  
+  // FIX: Estrellas amarillas en testimonios mostrados
+  .stars svg {
+    color: #ffc107 !important;
+  }
+}
+
+.testimonial-form {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  color: #ffffff !important;
+  
+  h3 {
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  
+  input, select, textarea {
+    border-radius: var(--radius-sm) !important;
+    border: 2px solid rgba(255,255,255,0.3) !important;
+    background: rgba(255,255,255,0.15) !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    
+    &::placeholder {
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 400;
+    }
+    
+    &:focus {
+      border-color: #ffffff !important;
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25) !important;
+      background: rgba(255,255,255,0.25) !important;
+      color: #ffffff !important;
+    }
+    
+    // Para selects
+    option {
+      background: var(--primary-color) !important;
+      color: #ffffff !important;
+    }
+  }
+  
+  .form-label {
+    font-weight: 600;
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  // Estrellas de rating - FIX AMARILLO
+  .rating-input .star {
+    color: rgba(255,255,255,0.4) !important;
+    
+    &:hover {
+      color: #ffc107 !important;  // ← CAMBIADO A AMARILLO
+    }
+  }
+  
+  // Mensajes de error
+  .invalid-feedback {
+    color: #ffebee !important;
+    font-weight: 500;
+  }
+  
+  // Botón del formulario
+  .btn-light {
+    background: #ffffff !important;
+    color: var(--primary-color) !important;
+    border: 2px solid #ffffff !important;
+    font-weight: 700;
+    
+    &:hover {
+      background: rgba(255,255,255,0.9) !important;
+      transform: translateY(-2px);
+    }
+    
+    &:disabled {
+      background: rgba(255,255,255,0.7) !important;
+      color: var(--primary-color) !important;
+    }
+  }
+}
+
+.rating-input .star {
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    color: #ffc107 !important;  // ← FIX: AMARILLO EN LUGAR DE NARANJA
+    transform: scale(1.2);
+  }
+  
+  &.active {
+    color: #ffc107 !important;  // ← FIX: AMARILLO EN LUGAR DE NARANJA
+  }
+}
+
+.client-info {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-gray);
+}
+
+// ==============================
+// Modals Mejorados (DeliveryDataForm, etc.)
+// ==============================
+.modal {
+  backdrop-filter: blur(5px);
+  
+  .modal-content {
+    border-radius: var(--radius-md);
+    border: none;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+  }
+  
+  .modal-header {
+    background: var(--gradient-primary) !important;
+    border-bottom: none;
+    padding: 1.5rem;
+    
+    .modal-title {
+      color: #ffffff !important;
+      font-weight: 700;
+      font-family: 'Panchang', sans-serif;
+      
+      i {
+        color: #ffffff !important;
+      }
+    }
+    
+    .btn-close-white {
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  .modal-body {
+    background: #ffffff;
+    padding: 2rem;
+    
+    h6 {
+      color: var(--primary-color) !important;
+      font-weight: 700;
+      font-family: 'Panchang', sans-serif;
+      
+      i {
+        color: var(--accent-color) !important;
+      }
+    }
+    
+    .form-label {
+      color: var(--text-primary) !important;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-family: 'Satoshi', sans-serif;
+    }
+    
+    input, select, textarea {
+      border: 2px solid var(--border-gray) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 0.75rem 1rem;
+      background: #ffffff !important;
+      color: var(--text-primary) !important;
+      font-family: 'Satoshi', sans-serif;
+      transition: all 0.3s ease;
+      
+      &::placeholder {
+        color: var(--text-muted) !important;
+        font-weight: 400;
+      }
+      
+      &:focus {
+        border-color: var(--accent-color) !important;
+        box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.15) !important;
+        background: #ffffff !important;
+        color: var(--text-primary) !important;
+      }
+      
+      &[readonly] {
+        background: var(--light-gray) !important;
+        color: var(--text-secondary) !important;
+      }
+    }
+    
+    .form-text {
+      color: var(--text-muted) !important;
+      font-size: 0.875rem;
+    }
+    
+    .btn {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 600;
+      
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+    
+    .spinner-border {
+      color: var(--accent-color);
+    }
+    
+    .text-center p {
+      color: var(--text-secondary) !important;
+    }
+  }
+  
+  .modal-footer {
+    background: var(--light-bg);
+    border-top: 1px solid var(--border-gray);
+    padding: 1.5rem;
+    
+    .btn-secondary {
+      background: var(--medium-gray) !important;
+      border-color: var(--medium-gray) !important;
+      color: var(--text-primary) !important;
+      
+      &:hover {
+        background: var(--border-gray) !important;
+        border-color: var(--border-gray) !important;
+      }
+    }
+    
+    .btn-primary {
+      background: var(--gradient-primary) !important;
+      border: none !important;
+      color: #ffffff !important;
+      
+      &:hover {
+        background: var(--gradient-accent) !important;
+        transform: translateY(-2px);
+      }
+      
+      &:disabled {
+        background: var(--medium-gray) !important;
+        color: var(--text-muted) !important;
+      }
+    }
+  }
+}
+
+// ==============================
+// Formularios Globales Mejorados
+// ==============================
+.form-control, .form-select {
+  &.is-invalid {
+    border-color: var(--error-color) !important;
+    
+    &:focus {
+      border-color: var(--error-color) !important;
+      box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.15) !important;
+    }
+  }
+}
+
+.invalid-feedback {
+  color: var(--error-color) !important;
+  font-weight: 500;
+}
+
+// ==============================
+// Spinners y Estados de Carga
+// ==============================
+.spinner-border {
+  &.text-primary {
+    color: var(--accent-color) !important;
+  }
+}
+
+// ==============================
+// Footer Mejorado
+// ==============================
+footer {
+  background: var(--gradient-dark) !important;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+  }
+}
+
+footer h5, footer h6 {
+  font-family: 'Panchang', sans-serif;
+  margin-bottom: 1.5rem;
+  color: var(--text-white);
+}
+
+footer ul li a {
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: var(--accent-color) !important;
+    transform: translateX(5px);
+  }
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-light);
+  
+  &:hover {
+    transform: translateY(-3px) scale(1.1);
+  }
+  
+  &:nth-child(1):hover { color: #1877f2; } // Facebook
+  &:nth-child(2):hover { color: #E4405F; } // Instagram  
+  &:nth-child(3):hover { color: #25D366; } // WhatsApp
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+  }
+  
+  ion-icon {
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+    color: var(--accent-color);
+  }
+}
+
+// ==============================
+// Estadísticas Mejoradas
+// ==============================
+.stat-item {
+  padding: 1.5rem;
+  text-align: center;
+  
+  &:hover .stat-number {
+    color: var(--accent-color);
+    transform: scale(1.05);
+  }
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: 'Panchang', sans-serif;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+  transition: all 0.3s ease;
+}
+
+// ==============================
+// Animaciones Mejoradas
+// ==============================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+// ==============================
+// Utilidades Adicionales
+// ==============================
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+.elevated {
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+}
+
+// ==============================
+// Responsive Mejorado
+// ==============================
+@media (max-width: 992px) {
+  #logo-sucrexpress {
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .hero-video video {
+    min-height: 400px;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    text-align: center;
+  }
+  
+  .service-card {
+    padding: 2rem;
+  }
+  
+  .testimonial-form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .btnVideo {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

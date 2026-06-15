@@ -1,0 +1,93 @@
+.admin-repartidores-lista {
+  padding: 20px;
+  background: #fff;
+}
+
+.repartidores-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #264269;
+  margin-bottom: 18px;
+}
+
+.repartidores-tabla-contenedor {
+  overflow-x: auto;
+}
+
+.repartidores-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.repartidores-tabla th, .repartidores-tabla td {
+  padding: 12px 12px;
+  text-align: center;
+}
+
+.repartidores-tabla thead tr {
+  background: #f1f5f9;
+}
+
+.repartidores-tabla tr:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.repartidor-foto-mini {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 2px solid #a1a7d7;
+  background: #f3f4f6;
+}
+
+.foto-placeholder {
+  background: #a1a7d7;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.repartidor-badge-calif {
+  display: inline-block;
+  min-width: 36px;
+  background: #f1faf3;
+  border-radius: 12px;
+  padding: 4px 8px;
+  color: #21bd7f;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge.verificado {
+  background: #38bdf8;
+}
+
+.badge.no-verificado {
+  background: #a1a1aa;
+}
+
+.badge.estado-activo {
+  background: #4ade80;
+}
+
+.badge.estado-inactivo, .badge.estado-bloqueado {
+  background: #f87171;
+}
