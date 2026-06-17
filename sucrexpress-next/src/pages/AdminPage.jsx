@@ -15,6 +15,7 @@ import '../assets/styles/admin.css';
 
 const AdminPage = () => {
   const [activeSection, setActiveSection] = useState(() => {
+    if (typeof window === 'undefined') return 'dashboard';
     return localStorage.getItem('activeAdminSection') || 'dashboard';
   });
 
