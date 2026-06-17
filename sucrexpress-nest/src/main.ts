@@ -10,7 +10,7 @@ async function bootstrap() {
 
   // CORS
   app.enableCors({
-    origin: function (origin, callback) {
+    origin: function (origin: string, callback: (err: Error | null, allow?: boolean) => void) {
       // Permitir cualquier origen en pre-producción/desarrollo
       callback(null, true);
     },
